@@ -2,10 +2,9 @@
 #![no_main]
 
 use cortex_m::asm::nop;
-use rtt_target::{rtt_init_print,rprintln} ;
 use cortex_m_rt::entry;
 use panic_halt as _;
-
+use rtt_target::{rprintln, rtt_init_print};
 
 #[entry]
 fn main() -> ! {
@@ -16,5 +15,5 @@ fn main() -> ! {
         for _ in 0..100_0000 {
             nop();
         }
-    } 
+    }
 }
