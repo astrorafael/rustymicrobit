@@ -80,6 +80,14 @@ Total               0xb8039
 
 ### Flashing the microcontroller
 
+We need to install the probe-rs tool collection:
+
+```
+curl --proto '=https' --tlsv1.2 -LsSf https://github.com/probe-rs/probe-rs/releases/latest/download/probe-rs-tools-installer.sh | sh
+```
+which provides `cargo-embed`, `cargo-flash` and `probe-rs`
+
+
 We also need some udev rules:
 
 File 99-microbit.rules:
