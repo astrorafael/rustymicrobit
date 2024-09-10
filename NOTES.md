@@ -80,6 +80,18 @@ Total               0xb8039
 
 ### Flashing the microcontroller
 
+We also need some udev rules:
+
+File 99-microbit.rules:
+```
+SUBSYSTEM=="usb", ATTR{idVendor}=="0d28", ATTR{idProduct}=="0204", MODE:="666"
+SUBSYSTEM=="hidraw", MODE:="666"
+```
+and reload the rules
+```bash
+sudo udevadm control --reload-rules && sudo udevadm trigger
+```
+
 ```bash
 cargo install probe-rs-tools 
 ```
